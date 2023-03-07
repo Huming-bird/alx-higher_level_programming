@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-for number in range(100):
-    if number != 99:
-        print("{}, "\
-            .format('0' + str(number) if number < 10 else number), end='')
+for a in range(100):
+    if a != 99:
+        print("{}, ".format('0' + str(a) if a < 10 else a), end='')
     else:
-        print("{}".format(number))
+        print("{}".format(a))
