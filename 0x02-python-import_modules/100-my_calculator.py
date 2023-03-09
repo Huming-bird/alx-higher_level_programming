@@ -10,7 +10,7 @@ if __name__ == "__main__":
     if arg < 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    if arg >= 3 and sys.argv[2] in ("*","+","-","/"):
+    if arg >= 3 and sys.argv[2] in ("*", "+", "-", "/"):
         ans = 0
         a = int(sys.argv[1])
         b = int(sys.argv[3])
