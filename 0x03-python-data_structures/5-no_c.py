@@ -2,7 +2,7 @@
 
 def no_c(my_string):
     for xter in my_string:
-        if xter == 'c'.islower() or xter == 'c'.isupper():
-            pass
+        if xter in "Cc":
+            continue
         print("{}".format(xter), end='')
     print('')
