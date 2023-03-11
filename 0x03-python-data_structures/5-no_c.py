@@ -4,6 +4,5 @@ def no_c(my_string):
     for xter in my_string:
         if xter == 'c'.islower() or xter == 'c'.isupper():
             pass
-        else:
-            print("{}".format(xter), end='')
+        print("{}".format(xter), end='')
     print('')
