@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 def no_c(my_string):
+    new = ''
     for xter in my_string:
         if xter in "Cc":
             continue
-        print("{}".format(xter), end='')
+        new += xter
+    return new
