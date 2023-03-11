@@ -5,4 +5,3 @@ def no_c(my_string):
         if xter in "Cc":
             continue
         print("{}".format(xter), end='')
-    print('')
