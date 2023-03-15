@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
-    dic = { 
+    numerals = { 
         'I': 1
         'V': 5
         'X': 10
@@ -10,6 +10,13 @@ def roman_to_int(roman_string):
         'D': 500
         'M': 1000
     }
-    if type(roman_string) != str or roman_string == None:
-        answer = 0
-    else:
+    total = 0
+    i = 0
+    while i < len(roman_string):
+        if i+1 < len(roman_string) and roman_string[i:i+2] in numerals:
+            total += numerals[roman_string[i:i+2]]
+            i += 2
+        else:
+            total += numerals[roman_string[i]]
+            i += 1
+    return total
