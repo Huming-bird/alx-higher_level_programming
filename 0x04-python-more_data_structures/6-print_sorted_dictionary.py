@@ -6,4 +6,5 @@ def print_sorted_dictionary(a_dictionary):
 
     for keys in holder:
         new[keys] = a_dictionary[keys]
-    return new
+    for key, value in new:
+        print(f"{key}: {value}")
