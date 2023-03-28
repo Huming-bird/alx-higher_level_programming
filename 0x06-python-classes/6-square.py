@@ -3,7 +3,7 @@
 class Square:
     """ This class, when called upon, instantiates a square object"""
 
-    def __init__(self, size=0, position=(0, 0):
+    def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.__position = position
 
@@ -28,7 +28,6 @@ class Square:
         elif type(value) == int and value > 0:
             self.__size = value
 
-    
     @position.setter
     def position(self, value):
         if type(position) != tuple or position[0] < 0 or position[1] < 0:
@@ -40,7 +39,8 @@ class Square:
         if self.__size == 0:
             print("")
         else:
-        for a in range(position[0]):
-            print(" " * position[0], end='')
-            for i in range(self.__size):
-                print('#' * self.__size)
+            for a in range(self.__position[0]):
+                print(" " * self.__position[0], end='')
+                for i in range(self.__size):
+                    print('#' * self.__size)
+                    break
