@@ -1,0 +1,41 @@
+This text file hold test cases for a python module that prints the first and 
+last name of the user.
+
+modulle name is `3-say_my_name` and function header is `say_my_name`.
+
+importing the functon 
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test Cases
+_________________
+
+>>> say_my_name('Ahmed', 'Olalekan')
+My name is Ahmed Olalekan
+
+>>> say_my_name('Tianah', 'Nike')
+My name is Tianah Nike
+
+>>> say_my_name('Mary')
+My name is Mary 
+
+>>> say_my_name('', '')
+My name is  
+
+Error
+________________
+
+>>> say_my_name(12, 'Ahmed')
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+>>> say_my_name('Ahmed', 100)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name(None, 12)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
