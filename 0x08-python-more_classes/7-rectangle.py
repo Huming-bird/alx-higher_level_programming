@@ -6,10 +6,15 @@ class Rectangle:
     """ This class represents
     a rectangle
     """
+
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """ Initialises a new rectangle object"""
         self.width = width
         self.height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -65,10 +70,14 @@ class Rectangle:
         else:
             for i in range(self.__height):
                 for j in range(self.__width):
-                    strng += "#"
+                    strng += str(self.print_symbol)
                 if i != self.__height - 1:
                     strng += '\n'
         return strng
 
     def __repr__(self):
         return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
