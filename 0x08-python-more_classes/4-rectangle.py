@@ -71,13 +71,4 @@ class Rectangle:
         return strng
 
     def __repr__(self):
-        strng = ''
-        if self.__width == 0 or self.__height == 0:
-            strng = ''
-        else:
-            for i in range(self.__height):
-                for j in range(self.__width):
-                    strng += "#"
-                if i != self.__height - 1:
-                    strng += '\n'
-        return strng
+        return "Rectangle ({}, {})".format(self.__width, self.__height)
