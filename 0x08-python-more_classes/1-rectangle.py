@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ This module is about a rectangle class """
 
+
 class Rectangle:
     """ This class represents
     a rectangle
     """
-    
     def __init__(self, width=0, height=0):
         """ Initialises a new rectangle object"""
         self.width = width
