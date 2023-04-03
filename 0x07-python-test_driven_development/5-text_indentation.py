@@ -11,8 +11,11 @@ def text_indentation(text):
     line indented texts
     """
 
+    if not(isinstance(text, str)):
+        raise TypeError("text must be a string")
+
     for letter in text:
         if letter in (".", "?", ":"):
-            print(letter, "\n\n", end='')
+            print(letter.rstrip(), "\n\n", end='')
         else:
-            print(letter, end='')
+            print(letter.rstrip(), end='')
