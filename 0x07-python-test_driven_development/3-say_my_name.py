@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+""" This module prints the first nd last name
+of the user
+"""
+
+
 def say_my_name(first_name, last_name=""):
     """ This function prints the first and last name of a person
 

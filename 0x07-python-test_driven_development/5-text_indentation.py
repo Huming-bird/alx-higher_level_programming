@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+""" This module contains function that
+indents a text after certain characyers
+"""
+
+
 def text_indentation(text):
     """ This function prints a text with 2 new lines after
     each of the specified characters.

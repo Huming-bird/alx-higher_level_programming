@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+""" This module prints a square of given size """
+
+
 def print_square(size):
     """ This function prints out a square
 
