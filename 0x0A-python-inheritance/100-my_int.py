@@ -3,7 +3,7 @@
 
 
 class MyInt(int):
-    """A rebel class with inverted int 
+    """A rebel class with inverted int
     operators == and !=
     """
 
