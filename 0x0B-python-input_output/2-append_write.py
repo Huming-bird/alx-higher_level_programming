@@ -4,7 +4,7 @@
 
 
 def append_write(filename="", text=""):
-    """ This function appends a text to 
+    """ This function appends a text to
     a file. it will return the number of
     characters added to the file.
     """

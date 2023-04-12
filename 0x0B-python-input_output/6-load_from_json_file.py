@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" This module contains a fnc that cretaes an obj from a 
+""" This module contains a fnc that cretaes an obj from a
 json file. """
 
 import json
