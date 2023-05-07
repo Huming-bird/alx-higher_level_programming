@@ -38,8 +38,3 @@ class Square:
             print("")
         if self.__size == 0:
             print("")
-
-
-s = Square(9)
-print(s.size)
-s.my_print()
