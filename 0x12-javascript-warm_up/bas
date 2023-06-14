@@ -1,0 +1,15 @@
+#!/bin/bash
+
+ROOT="/alx-higher_level_programming/0x12-javascript-warm_up"
+
+files=$(find "$ROOT" -name "*.js")
+
+for file in $files
+do
+    echo "Running semistandard on $file"
+	echo " "
+    semistandard --fix "$file"
+done
+git add .
+git commit -m 'updated semistandard styles'
+git push

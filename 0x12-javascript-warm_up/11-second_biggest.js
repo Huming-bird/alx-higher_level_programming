@@ -2,7 +2,7 @@
 
 // this script finds the 2nd biggest number from a list
 
-let args = process.argv.slice(2).map((x) => {
+const args = process.argv.slice(2).map((x) => {
   return parseInt(x);
 });
 
