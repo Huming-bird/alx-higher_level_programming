@@ -9,7 +9,7 @@ function factorial (n) {
     return n * factorial(n - 1);
   }
 }
-let n;
+const n;
 
 n = parseInt(process.argv[2]);
 console.log(factorial(n));
