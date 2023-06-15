@@ -6,6 +6,7 @@ files=$(find "$ROOT" -name "*.js")
 
 for file in $files
 do
+	chmod +x $file
     echo "Running semistandard on $file"
 	echo " "
     semistandard --fix "$file"

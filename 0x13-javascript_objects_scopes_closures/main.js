@@ -10,3 +10,11 @@ class Square extends Rectangle {
   }
 }
 module.exports = Rectangle;
+
+const squ = new Square(3);
+console.log(squ.width);
+
+const s1 = new Square(4);
+s1.print();
+s1.double();
+s1.print();
