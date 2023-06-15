@@ -1,17 +1,20 @@
 #!/usr/bin/node
 
-const dict = require('./101-data.js');
+// this script creates a rectangle object
+const { dict } = require('./101-data.js');
+const newDict = {};
 
-const userOccurrences = {};
+for (const key in dict) {
+  if (dict.hasOwnProperty(key)) {
+    const val = dict[key];
 
-for (const userId in dict) {
-  const occurrences = dict[userId];
-
-  if (occurrences in userOccurrences) {
-    userOccurrences[occurrences].push(userId);
-  } else {
-    userOccurrences[occurrences] = [userId];
+    if (val in newDict) {
+      newDict[val].push(key);
+    } else {
+      newDict[val] = [key];
+    }
   }
 }
 
-console.log(userOccurrences);
+console.log(newDict);
+
