@@ -1,20 +1,19 @@
 #!/usr/bin/node
 
 // this script creates a rectangle object
+const { dict } = require('./101-data.js');
+const newDict = {};
 
-const Rectangle = require('./4-rectangle.js');
+for (const key in dict) {
+  if (dict.hasOwnProperty(key)) {
+    const val = dict[key];
 
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
+    if (val in newDict) {
+      newDict[val].push(key);
+    } else {
+      newDict[val] = [key];
+    }
   }
 }
-module.exports = Rectangle;
 
-const squ = new Square(3);
-console.log(squ.width);
-
-const s1 = new Square(4);
-s1.print();
-s1.double();
-s1.print();
+console.log(newDict);
