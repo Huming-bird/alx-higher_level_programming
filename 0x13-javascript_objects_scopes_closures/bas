@@ -1,0 +1,16 @@
+#!/bin/bash
+
+ROOT="/alx-higher_level_programming/0x13-javascript_objects_scopes_closures"
+
+files=$(find "$ROOT" -name "*.js")
+
+for file in $files
+do
+	chmod +x $file
+    echo "Running semistandard on $file"
+	echo " "
+    semistandard --fix "$file"
+done
+git add .
+git commit -m 'JS objects scopes and closures'
+git push
