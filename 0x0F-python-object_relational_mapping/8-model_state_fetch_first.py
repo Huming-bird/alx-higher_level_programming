@@ -8,14 +8,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-db_query = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
-user = sys.argv[1]
-pwd = sys.argv[2]
-db = sys.argv[3]
+if __name__ == '__main__':
 
-
-def main():
-    ''' this function fetches all states from the db '''
+    db_query = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
+    user = sys.argv[1]
+    pwd = sys.argv[2]
+    db = sys.argv[3]
 
     engine = create_engine(db_query.format(user, pwd, db), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
@@ -25,7 +23,3 @@ def main():
         print('Nothing')
     else:
         print(f"{result.id}: {result.name}")
-
-
-if __name__ == '__main__':
-    main()
