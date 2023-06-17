@@ -23,7 +23,10 @@ def main():
     cur.execute(query, (state_name,))
     result = cur.fetchall()
     for row in result:
-        print(row)
+        if row != result[-1]:
+            print(row[0], end=', ')
+        else:
+            print(row[0])
 
     cur.close()
     db.close()
