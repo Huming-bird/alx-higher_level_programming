@@ -18,7 +18,7 @@ def main():
     db = MySQLdb.connect(host=host, port=port, user=user, passwd=passwd, db=db)
     cur = db.cursor()
     query = "SELECT cities.id, cities.name, states.name \
-            FROM cities JOIN states ON stated.id = cities.states_id \
+            FROM cities JOIN states ON states.id = cities.state_id \
             ORDER BY cities.id ASC"
     cur.execute(query)
     result = cur.fetchall()
