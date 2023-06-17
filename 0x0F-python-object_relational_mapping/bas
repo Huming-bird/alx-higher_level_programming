@@ -1,0 +1,15 @@
+#!/bin/bash
+
+ROOT="/alx-higher_level_programming/0x0F-python-object_relational_mapping"
+
+files=$(find "$ROOT" -name "*.py")
+
+for file in $files
+do
+    echo "Running pycodestyle on $file"
+	echo " "
+    pycodestyle --fix "$file"
+done
+git add .
+git commit -m 'ORMs in Python ALXSWE'
+git push
