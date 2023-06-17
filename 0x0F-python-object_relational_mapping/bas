@@ -8,7 +8,7 @@ for file in $files
 do
     echo "Running pycodestyle on $file"
 	echo " "
-    pycodestyle --fix "$file"
+    pycodestyle "$file"
 done
 git add .
 git commit -m 'ORMs in Python ALXSWE'
