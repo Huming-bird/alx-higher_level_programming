@@ -1,19 +1,17 @@
 #!/usr/bin/python3
-
-''' this script uses SQLAlchemy ORM to cretae table like classes '''
-
-import MySQLdb
-from sqlalchemy import Column, String, Integer
+""" This module is to create a state model """
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
+import MySQLdb
 
-Base = declarative_base()
+
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
 
 
 class State(Base):
-    ''' this class defines all state objects '''
-
+    """creation of the table states"""
     __tablename__ = 'states'
-
-    id = Column(Integer, Unique=True, autoincrement=True, nullable=True,
-                primary_key=True)
+    id = Column(Integer, autoincrement=True, primary_key=True,
+                nullable=False, unique=True)
     name = Column(String(128), nullable=False)
