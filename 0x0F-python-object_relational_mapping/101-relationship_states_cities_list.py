@@ -7,8 +7,10 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from relationship_city import City
 
 if __name__ == '__main__':
+
     db_query = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
     user = sys.argv[1]
     pwd = sys.argv[2]
@@ -17,8 +19,8 @@ if __name__ == '__main__':
     engine = create_engine(db_query.format(user, pwd, db), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    results = session.query(State).filter(State.name.ilike('%a%')).all()
-
-    for result in results:
-        session.delete(result)
-    session.commit()
+    query = session.query(State).outerjoin(City).order_by(State.id, City.id)
+    for state in query.all():
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("    {}: {}".format(city.id, city.name))
