@@ -5,8 +5,8 @@ from sqlalchemy.ext.declarative import declarative_base
 import MySQLdb
 
 
-mymetadata = MetaData()
-Base = declarative_base(metadata=mymetadata)
+metadata = MetaData()
+Base = declarative_base(metadata=metadata)
 
 
 class State(Base):
