@@ -17,7 +17,8 @@ if __name__ == '__main__':
     engine = create_engine(db_query.format(user, pwd, db), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).filter(State.name.ilike('%a%')).\
-        order_by(State.id).all()
-    session.delete(result)
-    session.commit()
+    results = session.query(State).filter(State.name.ilike('%a%')).all()
+
+    for result in results:
+        session.delete(result)
+        session.commit()
