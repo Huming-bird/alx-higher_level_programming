@@ -10,14 +10,14 @@ from model_state import Base, State
 
 db_query = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
 user = sys.argv[1]
-passwd = sys.argv[2]
+pwd = sys.argv[2]
 db = sys.argv[3]
 
 
 def main():
     ''' this function fetches all states from the db '''
 
-    engine = create_engine(db_query.format(user, passwd, db))
+    engine = create_engine(db_query.format(user, pwd, db), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
     result = session.query(State).order_by(State.id).all()
