@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+git add .
+git commit -m 'ORMs in Python ALXSWE'
+git push
