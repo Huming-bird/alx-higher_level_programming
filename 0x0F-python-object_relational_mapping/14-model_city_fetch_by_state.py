@@ -18,8 +18,7 @@ if __name__ = '__main__':
     engine = create_engine(db_query.format(user, pwd, db), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(City).order_by(City.id).all()
+    result = session.query(City).join(State).order_by(City.id).all()
 
     for row in result:
-        state = session.query(State).filter(State.id == row.state_id).first()
         print(f"{state.name}: ({row.id}) {row.name}")
