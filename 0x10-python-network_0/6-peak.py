@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
-""" this script contains a function that finds the peak 
+""" this script contains a function that finds the peak
     in an unsorted list
     """
+
 
 def find_peak(list_of_integers):
     """
@@ -17,7 +18,7 @@ def find_peak(list_of_integers):
         return list_of_integers[0]
     if max(list_of_integers) == list_of_integers[-1]\
             or max(list_of_integers) == list_of_integers[0]:
-                return max(list_of_integers)
+        return max(list_of_integers)
     for num in set_num:
         ind = [i for i, n in enumerate(list_of_integers) if n == num]
         for i in ind:
@@ -28,6 +29,6 @@ def find_peak(list_of_integers):
             else:
                 if list_of_integers[i] > list_of_integers[i - 1]\
                         and list_of_integers[i] > list_of_integers[i + 1]:
-                            peak = list_of_integers[i]
-                            break
+                    peak = list_of_integers[i]
+                    break
     return peak
