@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-# this module gets data from htbn website
+""" this module gets data from htbn website """
 
 from urllib.request import urlopen
+
 
 def main():
     """ this function will be executed when code is
@@ -18,6 +19,7 @@ def main():
     print(f"\t- type: {type(body)}")
     print(f"\t- content: {body}")
     print(f"\t- utf-8 content: {utf}")
+
 
 if __name__ == "__main__":
     main()
