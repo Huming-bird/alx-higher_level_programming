@@ -1,1 +1,1 @@
-this dir is about webscraping using javascript
+this repo contains works on higher level languages
